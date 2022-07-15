@@ -1,3 +1,4 @@
+/*Pequeña idea de como realizar un juego de preguntas en c++, realizado por Juan José Läderach el 14 de noviembre del 2021*/
 #include <iostream>
 #include <stdlib.h> /* srand, rand */
 #include <time.h> /* time */
