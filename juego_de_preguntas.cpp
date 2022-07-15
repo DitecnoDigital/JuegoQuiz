@@ -10,26 +10,24 @@ struct preguntas{
 	string respuesta3;
 }p[5];
 
-int decisionMenu;
+
 
 int mostrarMenu();
 void jugarRonda();
 void definirPreguntas();
+void limpiarPantalla();
 
 int main(){
 	definirPreguntas();
 	while(true){
-		 decisionMenu= mostrarMenu();
-		if(decision == 0){
+		 
+		if(mostrarMenu() == 0){
 			return 0;
 		}
 	}
 }
 int mostrarMenu(){
-	int estado = system("clear");
-	if(estado == -1){
-		mostrarMenu();
-	}
+	limiarPantalla();
 	int decision = 0;
 	cout<<"Menu:"<<endl;
 	cout<<"1) Jugar una ronda."<<endl;
@@ -91,10 +89,7 @@ void jugarRonda(){
 			cout<<"Tu puntaje es de "<<puntaje<<"/"<<i<<"puntos."<<endl;
 			return;
 		}
-		int estado = system("clear");
-		if(estado == -1){
-			jugarRonda();
-		}
+	limpiarPantalla();
 	}
 	cout<<"Tu puntaje es de "<<puntaje<<"/50 puntos."<<endl;
 	return;
@@ -132,4 +127,11 @@ void definirPreguntas(){
 	p[4].respuesta3 = "3) Silvina Ocampo.";
 	p[4].correcta = 2;
 
+}
+void limpiarPantalla()
+{
+	int estado = system("clear");
+	if(estado == -1){
+		mostrarMenu();
+	}
 }
