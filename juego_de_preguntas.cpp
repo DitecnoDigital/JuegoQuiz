@@ -10,6 +10,8 @@ struct preguntas{
 	string respuesta3;
 }p[5];
 
+int decisionMenu;
+
 int mostrarMenu();
 void jugarRonda();
 void definirPreguntas();
@@ -17,7 +19,7 @@ void definirPreguntas();
 int main(){
 	definirPreguntas();
 	while(true){
-		int decision = mostrarMenu();
+		 decisionMenu= mostrarMenu();
 		if(decision == 0){
 			return 0;
 		}
