@@ -1,4 +1,6 @@
 #include <iostream>
+#include <stdlib.h> 
+#include <time.h>
 
 using namespace std;
 
@@ -27,7 +29,7 @@ int main(){
 	}
 }
 int mostrarMenu(){
-	limiarPantalla();
+	limpiarPantalla();
 	int decision = 0;
 	cout<<"Menu:"<<endl;
 	cout<<"1) Jugar una ronda."<<endl;
@@ -35,18 +37,15 @@ int mostrarMenu(){
 	cin>>decision;
 	switch(decision){
 		case 1:
-		estado = system("clear");
-		if(estado == -1){
-			mostrarMenu();
-		}
-		jugarRonda();		
-		break;
+			limpiarPantalla();
+			jugarRonda();		
+			break;
 		case 2:
-		return 0;
-		break;
+			return 0;
+			break;
 		default:
-		mostrarMenu();
-		break; 
+			mostrarMenu();
+			break; 
 	}
 	return 0;
 }
@@ -86,7 +85,7 @@ void jugarRonda(){
 		char continuar;
 		cin>>continuar;
 		if(continuar != 's'){
-			cout<<"Tu puntaje es de "<<puntaje<<"/"<<i<<"puntos."<<endl;
+			cout<<"Tu puntaje es de "<<puntaje<<"/"<<(i+1)*10<<"puntos."<<endl;
 			return;
 		}
 	limpiarPantalla();
@@ -95,9 +94,8 @@ void jugarRonda(){
 	return;
 }
 void definirPreguntas(){
-
 	
-	p[0].pregunta = "¿En qué año llegó el hombre a la Luna?";
+	p[0].pregunta = "¿En que año llegó el hombre a la Luna?";
 	p[0].respuesta1 = "1) En el año 1969.";
 	p[0].respuesta2 = "2) En el año 1978.";
 	p[0].respuesta3 = "3) En el año 1965.";
@@ -130,7 +128,7 @@ void definirPreguntas(){
 }
 void limpiarPantalla()
 {
-	int estado = system("clear");
+	int estado = system("cls");
 	if(estado == -1){
 		mostrarMenu();
 	}
