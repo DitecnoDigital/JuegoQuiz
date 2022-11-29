@@ -1,3 +1,4 @@
+![This is me](https://github.com/DitecnoDigital/JuegoQuiz/blob/main/PortadaQuiz.png)
 # Juego de Preguntas "Quiz"
 
 Juego Quiz es un juego de Preguntas realizado en el lenguaje C++,si quieren ver Tutorial  paso a paso en: 
